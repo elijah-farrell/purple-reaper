@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "purple-reaper",
+  "version": "${version}",
+  "name": "Purple Reaper",
+  "description": "Adds two powerful custom swords: the Flaming Purple Reaper and Purple Reaper with special effects and configurable stats",
+  "authors": [
+    "Elijah Farrell"
+  ],
+  "contact": {
+    "homepage": "https://github.com/elijah-farrell/purple-reaper",
+    "sources": "https://github.com/elijah-farrell/purple-reaper"
+  },
+  "license": "MIT",
+  "icon": "assets/purple-reaper/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.purplereaper.PurpleReaperMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
+
