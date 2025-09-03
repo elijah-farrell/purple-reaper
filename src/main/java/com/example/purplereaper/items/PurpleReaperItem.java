@@ -20,7 +20,7 @@ public class PurpleReaperItem extends SwordItem {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         ConfigManager.PurpleSwordConfig config = ConfigManager.getConfig().purple_reaper;
         
-        // Apply effects based on config
+        // Apply effects to target based on config
         if (config.weakness_effect) {
             target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, config.weakness_duration, config.weakness_amplifier));
         }
@@ -29,6 +29,7 @@ public class PurpleReaperItem extends SwordItem {
             target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, config.slowness_duration, config.slowness_amplifier));
         }
         
+        // Apply strength to the attacker based on config
         if (config.strength_effect) {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, config.strength_duration, config.strength_amplifier));
         }

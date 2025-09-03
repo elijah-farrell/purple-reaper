@@ -25,7 +25,7 @@ public class FlamingPurpleReaperItem extends SwordItem {
             target.setOnFireFor(config.fire_duration);
         }
 
-        // Apply additional effects based on config
+        // Apply effects to target based on config
         if (config.weakness_effect) {
             target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, config.weakness_duration, config.weakness_amplifier));
         }
