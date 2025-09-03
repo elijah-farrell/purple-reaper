@@ -5,10 +5,10 @@ A Minecraft Fabric mod that adds two powerful custom swords with special effects
 ## Features
 
 ### Flaming Purple Reaper
-![Flaming Purple Reaper](src/main/resources/assets/purple-reaper/textures/item/flaming_purple_reaper.png)
+<img src="src/main/resources/assets/purple-reaper/textures/item/flaming_purple_reaper.png" width="200" height="200" alt="Flaming Purple Reaper">
 
 ### Purple Reaper
-![Purple Reaper](src/main/resources/assets/purple-reaper/textures/item/purple_reaper.png)
+<img src="src/main/resources/assets/purple-reaper/textures/item/purple_reaper.png" width="200" height="200" alt="Purple Reaper">
 
 ## Installation
 
