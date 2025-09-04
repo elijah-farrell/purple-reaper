@@ -19,8 +19,8 @@ public class PurpleReaperMod implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     // Register the custom sword items
-    public static final Item FLAMING_PURPLE_REAPER = new FlamingPurpleReaperItem(new FabricItemSettings().maxDamage(2500));
-    public static final Item PURPLE_REAPER = new PurpleReaperItem(new FabricItemSettings().maxDamage(2000));
+    public static Item FLAMING_PURPLE_REAPER;
+    public static Item PURPLE_REAPER;
 
     @Override
     public void onInitialize() {
@@ -29,14 +29,37 @@ public class PurpleReaperMod implements ModInitializer {
         // Initialize config
         ConfigManager.init();
 
-        // Register the custom swords
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "flaming_purple_reaper"), FLAMING_PURPLE_REAPER);
-        Registry.register(Registries.ITEM, new Identifier(MOD_ID, "purple_reaper"), PURPLE_REAPER);
+        // Create items with config values
+        ConfigManager.FlamingSwordConfig flamingConfig = ConfigManager.getConfig().flaming_purple_reaper;
+        ConfigManager.PurpleSwordConfig purpleConfig = ConfigManager.getConfig().purple_reaper;
 
-        // Add to combat creative tab
+        // Only create items if they are enabled
+        if (flamingConfig.enabled) {
+            FLAMING_PURPLE_REAPER = new FlamingPurpleReaperItem(
+                flamingConfig.attack_damage,
+                flamingConfig.attack_speed,
+                new FabricItemSettings().maxDamage(flamingConfig.durability)
+            );
+            Registry.register(Registries.ITEM, new Identifier(MOD_ID, "flaming_purple_reaper"), FLAMING_PURPLE_REAPER);
+        }
+
+        if (purpleConfig.enabled) {
+            PURPLE_REAPER = new PurpleReaperItem(
+                purpleConfig.attack_damage,
+                purpleConfig.attack_speed,
+                new FabricItemSettings().maxDamage(purpleConfig.durability)
+            );
+            Registry.register(Registries.ITEM, new Identifier(MOD_ID, "purple_reaper"), PURPLE_REAPER);
+        }
+
+        // Add to combat creative tab only if items exist
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> {
-            content.add(FLAMING_PURPLE_REAPER);
-            content.add(PURPLE_REAPER);
+            if (FLAMING_PURPLE_REAPER != null) {
+                content.add(FLAMING_PURPLE_REAPER);
+            }
+            if (PURPLE_REAPER != null) {
+                content.add(PURPLE_REAPER);
+            }
         });
 
         LOGGER.info("Purple Reaper Mod initialized successfully!");

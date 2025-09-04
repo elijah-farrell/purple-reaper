@@ -24,35 +24,15 @@ public class ConfigManager {
     public static class FlamingSwordConfig {
         public boolean enabled = true;
         public int attack_damage = 8;
-        public float attack_speed = -2.4f;
+        public float attack_speed = 1.6f;
         public int durability = 2500;
-        public boolean fire_effect = true;
-        public int fire_duration = 5;
-        public boolean weakness_effect = true;
-        public int weakness_duration = 100;
-        public int weakness_amplifier = 1;
-        public boolean slowness_effect = true;
-        public int slowness_duration = 60;
-        public int slowness_amplifier = 1;
-        public boolean strength_effect = true;
-        public int strength_duration = 100;
-        public int strength_amplifier = 1;
     }
     
     public static class PurpleSwordConfig {
         public boolean enabled = true;
         public int attack_damage = 7;
-        public float attack_speed = -2.4f;
+        public float attack_speed = 1.6f;
         public int durability = 2000;
-        public boolean weakness_effect = true;
-        public int weakness_duration = 80;
-        public int weakness_amplifier = 1;
-        public boolean slowness_effect = true;
-        public int slowness_duration = 40;
-        public int slowness_amplifier = 1;
-        public boolean strength_effect = true;
-        public int strength_duration = 80;
-        public int strength_amplifier = 1;
     }
     
     public static void init() {
