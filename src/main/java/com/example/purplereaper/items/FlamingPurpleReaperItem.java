@@ -1,6 +1,5 @@
 package com.example.purplereaper.items;
 
-import com.example.purplereaper.config.ConfigManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterials;
